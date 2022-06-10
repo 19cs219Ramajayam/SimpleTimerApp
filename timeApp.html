@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="timeApp.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <div class="n">
+        <h1>Timer</h1>
+    <form action="">
+        <label for="h">Hours<br>
+        <input type="text" name="h" id="h" onfocus="this.value=''"  value="0" placeholder="Hours">
+    </label><br>
+    <label for="m">Minutes<br>
+        <input type="text" name="m" id="m" onfocus="this.value=''"  value="1" placeholder="Minutes">
+    </label><br>
+    <label for="s">Seconds<br>
+        <input type="text" name="s" id="s" onfocus="this.value=''"  value="13" placeholder="Seconds">
+    </label>
+    </form>
+    <br>
+    <div id="t">00:00:00</div>
+    <div class="c">
+        <button  onclick="st()">Start</button>
+        <button  onclick="rt()">Restart</button>
+    </div>
+</div>
+</center>
+<script>
+var h1=0,m1=0,run=null,s1=0;
+    var h=document.getElementById("h")
+    var m=document.getElementById("m")
+    var s=document.getElementById("s")
+function st(){
+if(s.value<=60){
+    s.value--
+}
+if(s.value==0){
+    s.value=60
+    m.value--
+}
+if(s.value==-1){
+    s.value=0;
+}
+if(m.value==0){
+    s.value=0;
+    h.value=0
+}
+h1=(h.value<10)?"0"+h.value:h.value;
+        m1=(m.value<10)?"0"+m.value:m.value;
+        s1=(s.value<10)?"0"+s.value:s.value;
+        if(h.value==0){
+            document.getElementById("t").innerHTML=m1+":"+s1;
+}else{
+document.getElementById("t").innerHTML=h1+":"+m1+":"+s1;
+}
+run=setTimeout("st()",1000);
+if(h.value==0 && m.value==0 && s.value==0){
+    document.getElementById("t").innerHTML="Time Up !";
+}
+
+}
+function rt(){
+    clearTimeout(run);    
+    document.getElementById("t").innerHTML="00:00:00";
+}
+</script>
+</body>
+</html>

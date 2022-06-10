@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: coral;
+    overflow-x: hidden;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+input{
+    margin-right: 10px;
+    height: 30px;
+    width: 90px;
+    margin-left: 10px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 1em;
+}
+input:hover{
+    border:2px solid blue;
+}
+input:hover::placeholder{
+    color:darkcyan;
+    font-size: 1em;
+}
+input::placeholder{
+    padding-left: 10px;
+}
+label{
+    font-size:1.2em;
+}
+label:hover{
+color:darkmagenta;
+}
+.c{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+button{
+    padding:5px 50px 5px 50px;
+    text-transform:capitalize;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+button:hover{
+    color: darkgrey;
+    background-color:teal;
+}
+button:active{
+    color: blue;
+    background-color: lightskyblue;
+}
+.n{
+    background-color: cornflowerblue;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 150px;
+    border-radius: 10px;
+}
+h1{
+    margin-bottom: 30px;
+}
+/* displaying the timer */
+#t{
+    font-size: 40px;
+    text-align: center;
+}
+@media (max-width:426px) {
+
+    
+}
